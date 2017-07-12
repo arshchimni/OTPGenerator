@@ -1,4 +1,4 @@
-package com.mytechwall.android.otpgenerator;
+package com.mytechwall.android.otpgenerator.model;
 
 import android.content.ContentResolver;
 import android.net.Uri;

@@ -1,4 +1,4 @@
-package com.mytechwall.android.otpgenerator;
+package com.mytechwall.android.otpgenerator.activity;
 
 import android.content.ContentValues;
 import android.net.Uri;
@@ -10,12 +10,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.mytechwall.android.otpgenerator.R;
+import com.mytechwall.android.otpgenerator.model.ContactModel;
+import com.mytechwall.android.otpgenerator.model.SentSMSContarct;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -78,6 +82,7 @@ public class SmsCompose extends AppCompatActivity {
                     }
                 };
                 requestQueue.add(stringRequest);
+                stringRequest.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
 
             }
@@ -95,7 +100,7 @@ public class SmsCompose extends AppCompatActivity {
             Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
         }
         else {
-            Toast.makeText(this, "Sucess", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Sucess", Toast.LENGTH_SHORT).show();
             finish();
         }
     }

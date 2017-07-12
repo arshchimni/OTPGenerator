@@ -1,4 +1,6 @@
-package com.mytechwall.android.otpgenerator;
+package com.mytechwall.android.otpgenerator.model;
+
+import com.mytechwall.android.otpgenerator.model.ContactModel;
 
 import java.util.ArrayList;
 

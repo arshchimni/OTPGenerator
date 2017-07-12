@@ -1,10 +1,8 @@
-package com.mytechwall.android.otpgenerator;
+package com.mytechwall.android.otpgenerator.fragments;
 
-import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
@@ -13,6 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import com.mytechwall.android.otpgenerator.R;
+import com.mytechwall.android.otpgenerator.model.SentSMSContarct;
+import com.mytechwall.android.otpgenerator.adapters.SentSmsCursorAdapter;
 
 
 public class SentSmsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {

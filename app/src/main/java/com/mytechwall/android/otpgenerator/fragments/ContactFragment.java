@@ -1,4 +1,4 @@
-package com.mytechwall.android.otpgenerator;
+package com.mytechwall.android.otpgenerator.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.mytechwall.android.otpgenerator.activity.ContactInfoActivity;
+import com.mytechwall.android.otpgenerator.model.ContactModel;
+import com.mytechwall.android.otpgenerator.model.ContactsUtil;
+import com.mytechwall.android.otpgenerator.R;
+import com.mytechwall.android.otpgenerator.adapters.ListViewAdapter;
 
 import java.util.ArrayList;
 

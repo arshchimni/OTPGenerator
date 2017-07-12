@@ -1,4 +1,4 @@
-package com.mytechwall.android.otpgenerator;
+package com.mytechwall.android.otpgenerator.model;
 
 import java.io.Serializable;
 

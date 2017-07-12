@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.mytechwall.android.otpgenerator.SmsCompose">
+    tools:context="com.mytechwall.android.otpgenerator.activity.SmsCompose">
 
     <TextView
         android:id="@+id/composeSmsTextView"

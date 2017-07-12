@@ -1,8 +1,10 @@
-package com.mytechwall.android.otpgenerator;
+package com.mytechwall.android.otpgenerator.model;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.mytechwall.android.otpgenerator.model.SentSMSContarct;
 
 /**
  * Created by arshdeep chimni on 12-07-2017.

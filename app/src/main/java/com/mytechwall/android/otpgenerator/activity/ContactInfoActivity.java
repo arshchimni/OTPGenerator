@@ -1,4 +1,4 @@
-package com.mytechwall.android.otpgenerator;
+package com.mytechwall.android.otpgenerator.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.mytechwall.android.otpgenerator.R;
+import com.mytechwall.android.otpgenerator.model.ContactModel;
 
 import java.io.Serializable;
 

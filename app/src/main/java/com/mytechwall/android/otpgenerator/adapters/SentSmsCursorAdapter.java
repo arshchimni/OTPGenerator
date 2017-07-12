@@ -1,4 +1,4 @@
-package com.mytechwall.android.otpgenerator;
+package com.mytechwall.android.otpgenerator.adapters;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.mytechwall.android.otpgenerator.R;
+import com.mytechwall.android.otpgenerator.model.SentSMSContarct;
 
 /**
  * Created by arshdeep chimni on 12-07-2017.
