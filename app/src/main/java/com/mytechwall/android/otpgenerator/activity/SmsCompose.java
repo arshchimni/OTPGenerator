@@ -1,6 +1,9 @@
 package com.mytechwall.android.otpgenerator.activity;
 
 import android.content.ContentValues;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,48 +49,60 @@ public class SmsCompose extends AppCompatActivity {
         otp = 100000 + random.nextInt(900000);
         String smsBody="Hi. Your OTP is: "+otp;
         composeSms.setText(smsBody);
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        final NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
 
         sendSms.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View view) {
-
-                RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-
-                String url = "http://d669baad.ngrok.io/AndroidVolley";
-
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                Toast.makeText(getApplicationContext(),response,Toast.LENGTH_LONG).show();
-                                saveSmsData();
-                            }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_LONG).show();
-                            }
-                        }){
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
-                         super.getParams();
-
-                        Map<String,String> params = new HashMap<String, String>();
-                        String otpVal=String.valueOf(otp);
-                        params.put("OTP",otpVal);
-                        return params;
-                    }
-                };
-                requestQueue.add(stringRequest);
-                stringRequest.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-
-
+                if (activeNetworkInfo != null && activeNetworkInfo.isConnected()){
+                    performNetworkRequest();
+                }
+                else{
+                    Toast.makeText(SmsCompose.this, "NO INTERNET", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
+
+
+    private void performNetworkRequest(){
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        String url = "http://d669baad.ngrok.io/AndroidVolley";
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(getApplicationContext(),response,Toast.LENGTH_LONG).show();
+                        saveSmsData();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(),"SERVER UNREACHABLE",Toast.LENGTH_LONG).show();
+                        onBackPressed();
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                super.getParams();
+
+                Map<String,String> params = new HashMap<String, String>();
+                String otpVal=String.valueOf(otp);
+                params.put("OTP",otpVal);
+                return params;
+            }
+        };
+        requestQueue.add(stringRequest);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+
+    }
+
+
 
     private void saveSmsData() {
         String time = getDateTime();

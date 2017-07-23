@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.mytechwall.android.otpgenerator.R;
 import com.mytechwall.android.otpgenerator.model.SentSMSContarct;
@@ -41,6 +42,8 @@ public class SentSmsFragment extends Fragment implements LoaderManager.LoaderCal
         sentList = (ListView) rootView.findViewById(R.id.sentList);
         adapter = new SentSmsCursorAdapter(getContext(), null);
         sentList.setAdapter(adapter);
+        TextView emptyTextView=(TextView)rootView.findViewById(R.id.emptytextView);
+        sentList.setEmptyView(emptyTextView);
         getLoaderManager().initLoader(0, null, this);
         return rootView;
     }
