@@ -16,27 +16,27 @@ tools:context=".activity.ContactInfoActivity">
     <!-- Label -->
     <TextView
         style="@style/CategoryStyle"
-        android:text="First Name" />
+        android:text="First Name"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
-    <!-- Input fields -->
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:orientation="vertical"
-        android:paddingLeft="4dp">
+
 
         <!-- Name field -->
-        <TextView
-            android:id="@+id/firstName"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/firstName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="45dp"
+        android:paddingTop="16dp"
+        android:textAlignment="gravity"
+        android:textColor="#2B3D4D"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
-    </LinearLayout>
 </LinearLayout>
 
-<!-- Gender category -->
+
 <LinearLayout
     android:id="@+id/container_lastName"
     android:layout_width="match_parent"
@@ -46,25 +46,25 @@ tools:context=".activity.ContactInfoActivity">
     <!-- Label -->
     <TextView
         style="@style/CategoryStyle"
-        android:text="Last Name" />
+        android:text="Last Name"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
-    <!-- Input field -->
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/lastName"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp" />
+    <TextView
+        android:id="@+id/lastName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="47dp"
+        android:paddingTop="16dp"
+        android:textColor="#2B3D4D"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
-    </LinearLayout>
+
 </LinearLayout>
 
-<!-- Measurement category -->
+
 <LinearLayout
     android:id="@+id/container_number"
     android:layout_width="match_parent"
@@ -74,22 +74,21 @@ tools:context=".activity.ContactInfoActivity">
     <!-- Label -->
     <TextView
         style="@style/CategoryStyle"
-        android:text="Contact Number" />
+        android:text="Contact Number"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
-    <!-- Input fields -->
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/contactNumber"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/contactNumber"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="16dp"
+        android:textColor="#2B3D4D"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
-    </LinearLayout>
 </LinearLayout>
 
     <Button

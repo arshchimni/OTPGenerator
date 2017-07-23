@@ -69,7 +69,7 @@ public class SmsCompose extends AppCompatActivity {
     private void performNetworkRequest(){
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-        String url = "http://d669baad.ngrok.io/AndroidVolley";
+        String url = "https://0ecc5d03.ngrok.io/AndroidVolley";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -116,7 +116,7 @@ public class SmsCompose extends AppCompatActivity {
         }
         else {
             //Toast.makeText(this, "Sucess", Toast.LENGTH_SHORT).show();
-            finish();
+            onBackPressed();
         }
     }
 

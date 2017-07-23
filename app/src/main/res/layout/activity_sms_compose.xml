@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="TextView"
+        android:textColor="#2B3D4D"
         android:textSize="24sp" />
 
     <Button
