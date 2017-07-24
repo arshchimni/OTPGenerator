@@ -69,7 +69,7 @@ public class SmsCompose extends AppCompatActivity {
     private void performNetworkRequest(){
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-        String url = "https://0ecc5d03.ngrok.io/AndroidVolley";
+        String url = "Replace with yout url";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

@@ -31,6 +31,7 @@ public class ContactInfoActivity extends AppCompatActivity implements Serializab
                 Intent intent= new Intent(getApplicationContext(),SmsCompose.class);
                 intent.putExtra("CONTACT",currentDetail);
                 startActivity(intent);
+                finish();
             }
         });
 
